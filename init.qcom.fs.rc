@@ -1,0 +1,18 @@
+on init
+    # Set permissions for securefs partition
+    mkdir /securefs 0771 system system
+    mkdir /elabel 0770 system system
+
+on fs
+    wait /dev/block/bootdevice/by-name/elabel
+    mount ext4 /dev/block/bootdevice/by-name/elabel /elabel nosuid nosuid nodev barrier=1
+    chown system system /elabel
+    restorecon_recursive /elabel
+
+on post-fs-data
+    # Mounting of securefs is moved to 'on emmc-fs' and 'on fs' sections
+    # We chown/chmod /securefs again so because mount is run as root + defaults
+    chown system system /securefs
+    chmod 0771 /securefs
+    # Force restorecon recursive
+    start restsel

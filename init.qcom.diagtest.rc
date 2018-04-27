@@ -1,0 +1,3 @@
+on post-fs-data
+	chown system qcom_diag /dev/diagtest
+	chmod 0660 /dev/diagtest

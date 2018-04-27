@@ -1,0 +1,9 @@
+on post-fs-data
+    mkdir /data/logs/chargerlogger 0744 system system
+    chmod 0744 /data/logs/chargerlogger
+
+service chargerlogger /system/bin/chargerlogger
+    class late_start
+    user system
+    group system
+

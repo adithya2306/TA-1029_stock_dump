@@ -1,0 +1,192 @@
+on boot
+    chown system system /sys/class/sensors/lis3dsh-accel/device/device/offset
+    chown input system /sys/class/sensors/lis3dsh-accel/device/device/data
+    chown input system /sys/class/sensors/itg3050-gyro/device/value
+    chown input system /sys/class/sensors/lis3dsh-accel/device/device/smart_alert_enable_int
+    chown input system /sys/class/sensors/lis3dsh-accel/device/device/smart_alert_value
+    chmod 664 /sys/class/sensors/itg3050-gyro/device/value
+    chown input system /sys/class/sensors/kxcj1013-accel/device/device/smart_alert_enable_int
+    chown input system /sys/class/sensors/kxcj1013-accel/device/device/smart_alert_value
+    chown input system /sys/class/sensors/kxcj1013-accel/device/device/data
+    chown system system /sys/class/sensors/kxcj1013-accel/device/device/offset
+    chown input system /sys/class/sensors/stk3x1x-proximity/device/distance
+
+on property:sys.boot_completed=1
+    #fihtdc,20150820,derekcwwu add
+    chown system system /proc/cali_gyro
+    restorecon_recursive /sys/devices/soc.0/78b5000.i2c/i2c-1
+    restorecon_recursive /sys/class/sensors/l3gd20-gyro/device/enable_device
+    restorecon_recursive /sys/class/sensors/l3gd20-gyro/device/pollrate_ms
+    restorecon_recursive /sys/class/sensors/l3gd20-gyro/device/static_calibration
+
+on post-fs-data
+    chown system system /persist/sensors/magpara
+    chmod 666 /persist/sensors/magpara
+    chown system system /persist/sensors/bst_hal_cfg.txt
+    chown system system /persist/sensors/bsx4configSerialization_MULTI_DOF_INPUT_MAG_25HZ_ACC_GYRO_200HZ_OUTPUT_DEFAULT.csv
+    chown system system /persist/sensors/bsx4configSerialization_MULTI_DOF_magCalib_classical.csv
+    chown system system /persist/sensors/bsx4configSerialization_MULTI_DOF_magDelay_sameIIC.csv
+    chown system system /persist/sensors/bsx4configSerialization_MULTI_DOF_magnetometer_BMM150.csv
+    chown system system /persist/sensors/csv_load_list.txt
+    chmod 666 /persist/sensors/bst_hal_cfg.txt
+    chmod 666 /persist/sensors/bsx4configSerialization_MULTI_DOF_INPUT_MAG_25HZ_ACC_GYRO_200HZ_OUTPUT_DEFAULT.csv
+    chmod 666 /persist/sensors/bsx4configSerialization_MULTI_DOF_magCalib_classical.csv
+    chmod 666 /persist/sensors/bsx4configSerialization_MULTI_DOF_magDelay_sameIIC.csv
+    chmod 666 /persist/sensors/bsx4configSerialization_MULTI_DOF_magnetometer_BMM150.csv
+    chmod 666 /persist/sensors/csv_load_list.txt
+    restorecon_recursive /persist/sensors/magpara
+    restorecon_recursive /persist/sensors/bst_hal_cfg.txt
+    restorecon_recursive /persist/sensors/bsx4configSerialization_MULTI_DOF_INPUT_MAG_25HZ_ACC_GYRO_200HZ_OUTPUT_DEFAULT.csv
+    restorecon_recursive /persist/sensors/bsx4configSerialization_MULTI_DOF_magCalib_classical.csv
+    restorecon_recursive /persist/sensors/bsx4configSerialization_MULTI_DOF_magDelay_sameIIC.csv
+    restorecon_recursive /persist/sensors/bsx4configSerialization_MULTI_DOF_magnetometer_BMM150.csv
+    restorecon_recursive /persist/sensors/csv_load_list.txt
+
+    # BST setting
+    chmod 0660 /data/misc/sensord_stor
+    #sysFs properties for BST
+    chmod 0660 /sys/devices/virtual/input/bma2x2/SleepDur
+    chmod 0660 /sys/devices/virtual/input/bma2x2/bandwidth
+    chmod 0660 /sys/devices/virtual/input/bma2x2/delay
+    chmod 0660 /sys/devices/virtual/input/bma2x2/enable
+    chmod 0660 /sys/devices/virtual/input/bma2x2/enable_int
+    chmod 0660 /sys/devices/virtual/input/bma2x2/enable_timer
+    chmod 0660 /sys/devices/virtual/input/bma2x2/fast_calibration_x
+    chmod 0660 /sys/devices/virtual/input/bma2x2/fast_calibration_y
+    chmod 0660 /sys/devices/virtual/input/bma2x2/fast_calibration_z
+    chmod 0660 /sys/devices/virtual/input/bma2x2/fifo_data_frame
+    chmod 0660 /sys/devices/virtual/input/bma2x2/fifo_data_sel
+    chmod 0660 /sys/devices/virtual/input/bma2x2/fifo_framecount
+    chmod 0660 /sys/devices/virtual/input/bma2x2/fifo_mode
+    chmod 0660 /sys/devices/virtual/input/bma2x2/fifo_trig
+    chmod 0660 /sys/devices/virtual/input/bma2x2/fifo_trig_src
+    chmod 0660 /sys/devices/virtual/input/bma2x2/flat_hold_time
+    chmod 0660 /sys/devices/virtual/input/bma2x2/flat_theta
+    chmod 0660 /sys/devices/virtual/input/bma2x2/high_g_duration
+    chmod 0660 /sys/devices/virtual/input/bma2x2/high_g_threshold
+    chmod 0660 /sys/devices/virtual/input/bma2x2/int_mode
+    chmod 0660 /sys/devices/virtual/input/bma2x2/low_g_duration
+    chmod 0660 /sys/devices/virtual/input/bma2x2/low_g_threshold
+    chmod 0660 /sys/devices/virtual/input/bma2x2/offset_x
+    chmod 0660 /sys/devices/virtual/input/bma2x2/offset_y
+    chmod 0660 /sys/devices/virtual/input/bma2x2/offset_z
+    chmod 0660 /sys/devices/virtual/input/bma2x2/op_mode
+    chmod 0660 /sys/devices/virtual/input/bma2x2/orient_blocking
+    chmod 0660 /sys/devices/virtual/input/bma2x2/orient_hyst
+    chmod 0660 /sys/devices/virtual/input/bma2x2/orient_mode
+    chmod 0660 /sys/devices/virtual/input/bma2x2/orient_theta
+    chmod 0660 /sys/devices/virtual/input/bma2x2/place
+    chmod 0660 /sys/devices/virtual/input/bma2x2/range
+    chmod 0660 /sys/devices/virtual/input/bma2x2/reg
+    chmod 0660 /sys/devices/virtual/input/bma2x2/selftest
+    chmod 0660 /sys/devices/virtual/input/bma2x2/slope_duration
+    chmod 0660 /sys/devices/virtual/input/bma2x2/slope_no_mot_duration
+    chmod 0660 /sys/devices/virtual/input/bma2x2/slope_no_mot_threshold
+    chmod 0660 /sys/devices/virtual/input/bma2x2/slope_threshold
+    chmod 0660 /sys/devices/virtual/input/bma2x2/softreset
+    chmod 0660 /sys/devices/virtual/input/bma2x2/tap_duration
+    chmod 0660 /sys/devices/virtual/input/bma2x2/tap_quiet
+    chmod 0660 /sys/devices/virtual/input/bma2x2/tap_samp
+    chmod 0660 /sys/devices/virtual/input/bma2x2/tap_shock
+    chmod 0660 /sys/devices/virtual/input/bma2x2/tap_threshold
+    chmod 0660 /sys/devices/virtual/input/bma2x2/value
+    chmod 0660 /sys/devices/virtual/input/bma2x2/value_cache
+
+    chown system input /sys/devices/virtual/input/bma2x2/SleepDur
+    chown system input /sys/devices/virtual/input/bma2x2/bandwidth
+    chown system input /sys/devices/virtual/input/bma2x2/delay
+    chown system input /sys/devices/virtual/input/bma2x2/enable
+    chown system input /sys/devices/virtual/input/bma2x2/enable_int
+    chown system input /sys/devices/virtual/input/bma2x2/enable_timer
+    chown system input /sys/devices/virtual/input/bma2x2/fast_calibration_x
+    chown system input /sys/devices/virtual/input/bma2x2/fast_calibration_y
+    chown system input /sys/devices/virtual/input/bma2x2/fast_calibration_z
+    chown system input /sys/devices/virtual/input/bma2x2/fifo_data_frame
+    chown system input /sys/devices/virtual/input/bma2x2/fifo_data_sel
+    chown system input /sys/devices/virtual/input/bma2x2/fifo_framecount
+    chown system input /sys/devices/virtual/input/bma2x2/fifo_mode
+    chown system input /sys/devices/virtual/input/bma2x2/fifo_trig
+    chown system input /sys/devices/virtual/input/bma2x2/fifo_trig_src
+    chown system input /sys/devices/virtual/input/bma2x2/flat_hold_time
+    chown system input /sys/devices/virtual/input/bma2x2/flat_theta
+    chown system input /sys/devices/virtual/input/bma2x2/high_g_duration
+    chown system input /sys/devices/virtual/input/bma2x2/high_g_threshold
+    chown system input /sys/devices/virtual/input/bma2x2/int_mode
+    chown system input /sys/devices/virtual/input/bma2x2/low_g_duration
+    chown system input /sys/devices/virtual/input/bma2x2/low_g_threshold
+    chown system input /sys/devices/virtual/input/bma2x2/offset_x
+    chown system input /sys/devices/virtual/input/bma2x2/offset_y
+    chown system input /sys/devices/virtual/input/bma2x2/offset_z
+    chown system input /sys/devices/virtual/input/bma2x2/op_mode
+    chown system input /sys/devices/virtual/input/bma2x2/orient_blocking
+    chown system input /sys/devices/virtual/input/bma2x2/orient_hyst
+    chown system input /sys/devices/virtual/input/bma2x2/orient_mode
+    chown system input /sys/devices/virtual/input/bma2x2/orient_theta
+    chown system input /sys/devices/virtual/input/bma2x2/place
+    chown system input /sys/devices/virtual/input/bma2x2/range
+    chown system input /sys/devices/virtual/input/bma2x2/reg
+    chown system input /sys/devices/virtual/input/bma2x2/selftest
+    chown system input /sys/devices/virtual/input/bma2x2/slope_duration
+    chown system input /sys/devices/virtual/input/bma2x2/slope_no_mot_duration
+    chown system input /sys/devices/virtual/input/bma2x2/slope_no_mot_threshold
+    chown system input /sys/devices/virtual/input/bma2x2/slope_threshold
+    chown system input /sys/devices/virtual/input/bma2x2/softreset
+    chown system input /sys/devices/virtual/input/bma2x2/tap_duration
+    chown system input /sys/devices/virtual/input/bma2x2/tap_quiet
+    chown system input /sys/devices/virtual/input/bma2x2/tap_samp
+    chown system input /sys/devices/virtual/input/bma2x2/tap_shock
+    chown system input /sys/devices/virtual/input/bma2x2/tap_threshold
+    chown system input /sys/devices/virtual/input/bma2x2/value
+    chown system input /sys/devices/virtual/input/bma2x2/value_cache
+
+    chmod 0660 /sys/devices/virtual/input/bmm050/delay
+    chmod 0660 /sys/devices/virtual/input/bmm050/enable
+    chmod 0660 /sys/devices/virtual/input/bmm050/enable_timer
+    chmod 0660 /sys/devices/virtual/input/bmm050/odr
+    chmod 0660 /sys/devices/virtual/input/bmm050/op_mode
+    chmod 0660 /sys/devices/virtual/input/bmm050/place
+    chmod 0660 /sys/devices/virtual/input/bmm050/reg
+    chmod 0660 /sys/devices/virtual/input/bmm050/rept_xy
+    chmod 0660 /sys/devices/virtual/input/bmm050/rept_z
+    chmod 0660 /sys/devices/virtual/input/bmm050/test
+    chmod 0660 /sys/devices/virtual/input/bmm050/value
+    chmod 0660 /sys/devices/virtual/input/bmm050/value_raw
+
+    chown system system /proc/AllHWList/als_enable
+    chown system system /proc/AllHWList/als_count
+    chown system system /proc/AllHWList/ecompass_enable
+    chown system system /proc/AllHWList/ecompass_count
+    chown system system /proc/AllHWList/gsensor_enable
+    chown system system /proc/AllHWList/gsensor_count
+
+    chmod 644 /proc/AllHWList/als_enable
+    chmod 644 /proc/AllHWList/als_count
+    chmod 644 /proc/AllHWList/ecompass_enable
+    chmod 644 /proc/AllHWList/ecompass_count
+    chmod 644 /proc/AllHWList/gsensor_enable
+    chmod 644 /proc/AllHWList/gsensor_count
+
+    chown system input /sys/devices/virtual/input/bmm050/delay
+    chown system input /sys/devices/virtual/input/bmm050/enable
+    chown system input /sys/devices/virtual/input/bmm050/enable_timer
+    chown system input /sys/devices/virtual/input/bmm050/odr
+    chown system input /sys/devices/virtual/input/bmm050/op_mode
+    chown system input /sys/devices/virtual/input/bmm050/place
+    chown system input /sys/devices/virtual/input/bmm050/reg
+    chown system input /sys/devices/virtual/input/bmm050/rept_xy
+    chown system input /sys/devices/virtual/input/bmm050/rept_z
+    chown system input /sys/devices/virtual/input/bmm050/test
+    chown system input /sys/devices/virtual/input/bmm050/value
+    chown system input /sys/devices/virtual/input/bmm050/value_raw
+
+#service sensord /system/bin/sensord
+#    class late_start
+#    user system
+#    group system input
+#    disabled
+#
+#on property:ro.bsp.device=FA8
+#    start sensord
+#
+#on property:ro.bsp.device=FA9
+#    start sensord

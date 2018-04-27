@@ -1,0 +1,12 @@
+on boot
+    chown root shell /sys/kernel/ipo/ipo_state
+
+service ipo_daemon /system/bin/ipo_daemon
+    class main
+    group root system shell
+    oneshot
+    disabled
+
+on property:sys.ipo_shutdown=true
+    #restorecon /system/bin/ipo_daemon
+    start ipo_daemon

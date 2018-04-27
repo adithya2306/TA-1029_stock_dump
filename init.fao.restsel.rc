@@ -1,0 +1,6 @@
+# Restorecon selinux permission
+service restsel /system/bin/sh /init.fao.restoresel.sh
+    class main
+    group root system shell
+    oneshot
+    disabled

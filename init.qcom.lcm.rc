@@ -1,0 +1,27 @@
+# SW4-HL-Display-BringUpNT35521-00+{_20150224
+on boot
+	chown system system /sys/class/lcm/lcd/cabc_setting
+	chown system system /sys/class/lcm/lcd/color_mode
+	chown system system /sys/class/lcm/lcd/color_temperature
+	chmod 664 /sys/class/lcm/lcd/cabc_setting
+	chmod 664 /sys/class/lcm/lcd/color_mode
+	chmod 664 /sys/class/lcm/lcd/color_temperature
+	chown system system /proc/AllHWList/LCM0
+	chown system system /proc/AllHWList/LCM0/color_mode
+	chown system system /proc/AllHWList/LCM0/color_temperature
+	chown media media /proc/AllHWList/LCM0/CABC_settings
+	chmod 777 /proc/AllHWList/LCM0
+	chmod 664 /proc/AllHWList/LCM0/color_mode
+	chmod 664 /proc/AllHWList/LCM0/color_temperature
+	chmod 664 /proc/AllHWList/LCM0/CABC_settings
+# SW4-HL-Display-BringUpNT35521-00+}_20150224
+# E1M-390 - gatycclu - Add error count and status for FIH Run-In
+	chown system system /proc/AllHWList/LCM0/awer_cnt
+	chown system system /proc/AllHWList/LCM0/awer_status
+	chmod 664 /proc/AllHWList/LCM0/awer_cnt
+	chmod 664 /proc/AllHWList/LCM0/awer_status
+# end E1M-390
+	chown system system /proc/AllHWList/LCM0/suspend
+	chmod 664 /proc/AllHWList/LCM0/suspend
+	chown system system /proc/AllHWList/LCM0/SVI
+	chmod 664 /proc/AllHWList/LCM0/SVI

@@ -1,0 +1,75 @@
+on boot
+	chown system system /sys/class/rtc/rtc0/device/clear_alarm
+	setprop persist.sys.wbg.bt.service false
+	setprop persist.sys.wbg.bt btstop
+#jason add to change owner level for led pwm and vibrator level setting start
+  chown system system /sys/class/leds/pwmctl/brightness
+  chown system system /sys/class/leds/pwmctl/pwm_us
+  chown system system /sys/class/timed_output/vibrator/level
+  chmod 0664 /sys/class/timed_output/vibrator/level
+  restorecon /sys/class/timed_output/vibrator/level
+#jason add to change owner level for led pwm and vibrator level setting end
+
+# Jacob add the LED indiciation of AT2, 201706013, start
+	chown system system /sys/class/leds/red/brightness
+	chmod 0664 /sys/class/leds/red/brightness
+	restorecon /sys/class/leds/red/brightness
+	chown system system /sys/class/leds/green/brightness
+	chmod 0664 /sys/class/leds/green/brightness
+	restorecon /sys/class/leds/green/brightness
+	chown system system /sys/class/leds/blue/brightness
+	chmod 0664 /sys/class/leds/blue/brightness
+	restorecon /sys/class/leds/blue/brightness
+# Jacob add the LED indiciation of AT2, 201706013, end
+
+on post-fs-data
+# KennyChu Add for wapi certificate +++
+mkdir /data/certificate 0777 system system
+copy /system/etc/wifi/cert_chmod.sh /data/misc/cert_chmod.sh
+chmod 0755 /data/misc/cert_chmod.sh
+# KennyChu Add for wapi certificate ---
+
+on post-fs-data
+	restorecon_recursive /data/misc/wifi/sockets
+
+#Fihtdccode@SungSCLee  for different NV
+service wlan_nv /system/bin/sh /system/etc/wlan_nv.sh
+    class late_start
+    user root
+    oneshot
+#Fihtdccode@SungSCLee  for different NV
+
+# CPLai add for WBGTestTool Wi-Fi test
+service wbgtesttool_wifi /system/bin/sh /system/etc/wbgtesttool_wifitest.sh
+    user root
+    oneshot
+    disabled
+
+on property:persist.sys.wbg.wifi=start
+    start wbgtesttool_wifi
+
+#Fihtdccode@CPLai 20150625 add for FAO-3955 begin
+service rm_socket /system/bin/sh /system/etc/wifi_rm_socket.sh
+   user root
+   group root
+   oneshot
+   disabled
+
+on property:wifi.rm.socket=true
+   start rm_socket
+#Fihtdccode@CPLai 20150625 add for FAO-3955 end
+
+# TommyYSHung add for WBGTestTool BT test
+service btstart_sh /system/bin/sh /system/etc/btTest.sh
+	user root
+	oneshot
+	disabled
+
+# TommyYSHung add for WBGTestTool BT test
+#on property:persist.sys.wbg.bt=btstart
+on property:persist.sys.wbg.bt.service=true
+	start btstart_sh
+
+# TonyCYLin@20151223 replace Appops (disable it!) by Permission Control
+on property:persist.sys.security_enable=true
+    setprop persist.sys.security_enable false

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<LevelDef>
+    <LevelItem index="0" name="/res/fihcharger/battery_charge_0.gif"></LevelItem>
+    <LevelItem index="5" name="/res/fihcharger/battery_charge_5.gif"></LevelItem>
+    <LevelItem index="15" name="/res/fihcharger/battery_charge_15.gif"></LevelItem>
+    <LevelItem index="30" name="/res/fihcharger/battery_charge_30.gif"></LevelItem>
+    <LevelItem index="50" name="/res/fihcharger/battery_charge_50.gif"></LevelItem>
+    <LevelItem index="70" name="/res/fihcharger/battery_charge_70.gif"></LevelItem>
+    <LevelItem index="90" name="/res/fihcharger/battery_charge_90.gif"></LevelItem>
+    <LevelItem index="100" name="/res/fihcharger/battery_charge_100.gif"></LevelItem>
+    <UnknownItem index="unknown" name="/res/fihcharger/battery_charge_unknown.gif"></UnknownItem>
+    <UnapprovedItem index="unapproved" name="/res/fihcharger/battery_charge_unapproved.gif"></UnapprovedItem>
+    <ColdItem index="cold" name="/res/fihcharger/battery_charge_cold.gif"></ColdItem>
+    <HotItem index="hot" name="/res/fihcharger/battery_charge_hot.gif"></HotItem>
+
+	<Battery_Uevent_Str name="power_supply/battery"></Battery_Uevent_Str>
+    <AC_Uevent_Str name="power_supply/usb"></AC_Uevent_Str>
+    <USB_Uevent_Str name="power_supply/pc_port"></USB_Uevent_Str>
+    <WLC_Uevent_Str name="power_supply/dc"></WLC_Uevent_Str>
+
+    <AC_Online name="/sys/class/power_supply/usb/online"></AC_Online>
+    <USB_Online name="/sys/class/power_supply/pc_port/online"></USB_Online>
+    <WLC_Online name="/sys/class/power_supply/dc/online"></WLC_Online>
+
+    <Backlight name="/sys/class/leds/lcd-backlight/brightness"></Backlight>
+
+    <BlinkPWM name="/sys/class/leds/led:gpio1/pwm_powerOffChar_duty" onLevel_on="10" onLevel_off="1" offLevel_on="0" offLevel_off="0"></BlinkPWM>
+    <BlinkPWM_Err name="/sys/class/leds/led:gpio1/pwm_powerOffChar_duty" onLevel_on="36" onLevel_off="1980" offLevel_on="0" offLevel_off="0"></BlinkPWM_Err>
+    <LEDErr name="/sys/class/leds/red/brightness" onLevel="255" offLevel="0"></LEDErr>
+
+    <LEDItem index="100">
+        <Path name="/sys/class/leds/green/brightness" onLevel="255" offLevel="0"></Path>
+    </LEDItem>
+    <LEDItem index="15">
+        <Path name="/sys/class/leds/blue/brightness" onLevel="255" offLevel="0"></Path>
+    </LEDItem>
+    <LEDItem index="0">
+        <Path name="/sys/class/leds/red/brightness" onLevel="255" offLevel="0"></Path>
+    </LEDItem>
+
+    <LEDItem_vz1 index="100">
+        <Path name="/sys/class/leds/led-g/brightness" onLevel="255" offLevel="0"></Path>
+    </LEDItem_vz1>
+    <LEDItem_vz1 index="15">
+        <Path name="/sys/class/leds/led-b/brightness" onLevel="255" offLevel="0"></Path>
+    </LEDItem_vz1>
+    <LEDItem_vz1 index="0">
+        <Path name="/sys/class/leds/led-r/brightness" onLevel="255" offLevel="0"></Path>
+    </LEDItem_vz1>
+</LevelDef>

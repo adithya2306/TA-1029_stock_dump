@@ -1,0 +1,24 @@
+# Win add for TP virtual file 
+on boot
+	chown system system /proc/touch
+	chown system system /proc/touch_scover
+	chown system system /proc/AllHWList/tp_smart_cover
+	chown system system /proc/touch_upgrade
+	chmod 644 /proc/touch
+	chmod 444 /proc/touch_fwver
+	chmod 644 /proc/touch_fwback
+	chmod 444 /proc/touch_fwimver
+	chmod 644 /proc/touch_scover
+	chmod 644 /proc/AllHWList/tp_smart_cover
+	chmod 644 /proc/touch_upgrade
+	chmod 444 /proc/touch_vendor
+	chown system system /proc/AllHWList/tp_alt_rst
+	chown system system /proc/AllHWList/tp_alt_st_count
+	chown system system /proc/AllHWList/tp_alt_st_enable
+	chmod 644 /proc/AllHWList/tp_alt_rst
+	chmod 644 /proc/AllHWList/tp_alt_st_count
+	chmod 644 /proc/AllHWList/tp_alt_st_enable
+# Win add for TP virtual file
+on post-fs-data
+	mkdir /data/misc/touch 0700 system system
+	write /proc/touch_upgrade 1
