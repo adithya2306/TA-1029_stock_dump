@@ -1,0 +1,565 @@
+{
+  "version": "7.0010.02",
+  "app_install_rule": [
+    {
+      "carrierid": "Orange",
+      "phase": "on-insert-sim"
+    },
+    {
+      "carrierid": "Vodafone",
+      "phase": "before-provisioned"
+    }
+  ],
+  "app_trigger_rule": [
+    {
+      "pkgname": "com.orange.update",
+      "event": "on-package-added",
+      "delay": 5,
+      "type": "broadcast",
+      "action": "com.orange.update.intent.action.ACTION_POST_TRIGGER",
+      "carrierid": "Orange"
+    }
+  ],
+  "sim_targeting_rule": [
+    {
+      "moname": "Vodafone Greece",
+      "mccid": "202",
+      "mncid": "05",
+      "type": "spn",
+      "value": "vodafone GR",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Greece",
+      "mccid": "202",
+      "mncid": "05",
+      "type": "spn",
+      "value": "CU",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Greece",
+      "mccid": "202",
+      "mncid": "05",
+      "type": "spn",
+      "value": "CU-X",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Netherlands",
+      "mccid": "204",
+      "mncid": "04",
+      "type": "spn",
+      "value": "",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Netherlands",
+      "mccid": "204",
+      "mncid": "04",
+      "type": "imsi-exclude",
+      "value": "204043",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Netherlands",
+      "mccid": "204",
+      "mncid": "04",
+      "type": "imsi-exclude",
+      "value": "204046",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Spain",
+      "mccid": "214",
+      "mncid": "01",
+      "type": "spn",
+      "value": "",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Hungary",
+      "mccid": "216",
+      "mncid": "70",
+      "type": "spn",
+      "value": "vodafone HU",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Italy",
+      "mccid": "222",
+      "mncid": "10",
+      "type": "spn",
+      "value": "",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Czech Republic",
+      "mccid": "230",
+      "mncid": "03",
+      "type": "spn",
+      "value": "Vodafone CZ",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone UK",
+      "mccid": "234",
+      "mncid": "15",
+      "type": "spn",
+      "value": "",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Germany",
+      "mccid": "262",
+      "mncid": "02",
+      "type": "spn",
+      "value": "",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Germany",
+      "mccid": "262",
+      "mncid": "02",
+      "type": "imsir-exclude",
+      "value": "262021913520022-262021914085021",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Germany",
+      "mccid": "262",
+      "mncid": "02",
+      "type": "imsir-exclude",
+      "value": "262021914583022-262021914843021",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Germany",
+      "mccid": "262",
+      "mncid": "02",
+      "type": "imsir-exclude",
+      "value": "262021915688022-262021915689721",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Germany",
+      "mccid": "262",
+      "mncid": "02",
+      "type": "imsir-exclude",
+      "value": "262021916728922-262021916753921",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Germany",
+      "mccid": "262",
+      "mncid": "02",
+      "type": "imsir-exclude",
+      "value": "262021916844422-262021916869421",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Germany Test NW",
+      "mccid": "262",
+      "mncid": "09",
+      "type": "",
+      "value": "",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone IE",
+      "mccid": "272",
+      "mncid": "01",
+      "type": "spn",
+      "value": "Vodafone IE",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Portugal",
+      "mccid": "268",
+      "mncid": "01",
+      "type": "spn",
+      "value": "",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Romania",
+      "mccid": "226",
+      "mncid": "01",
+      "type": "spn",
+      "value": "Vodafone Ro",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Vodafone Albania",
+      "mccid": "276",
+      "mncid": "02",
+      "type": "spn",
+      "value": "VODAFONE-AL",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Swisscom",
+      "mccid": "228",
+      "mncid": "01",
+      "type": "spn",
+      "value": "Swisscom",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Proximus BE",
+      "mccid": "206",
+      "mncid": "01",
+      "type": "spn",
+      "value": "",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Proximus BE",
+      "mccid": "206",
+      "mncid": "01",
+      "type": "spn",
+      "value": "Pay&Go",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Proximus BE",
+      "mccid": "206",
+      "mncid": "01",
+      "type": "imsi-exclude",
+      "value": "20601040",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Proximus BE",
+      "mccid": "206",
+      "mncid": "01",
+      "type": "imsi-exclude",
+      "value": "20601050",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Proximus BE",
+      "mccid": "206",
+      "mncid": "01",
+      "type": "imsi-exclude",
+      "value": "20601051",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Proximus BE",
+      "mccid": "206",
+      "mncid": "01",
+      "type": "imsi-exclude",
+      "value": "20601052",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Proximus BE",
+      "mccid": "206",
+      "mncid": "01",
+      "type": "imsi-exclude",
+      "value": "20601880",
+      "carrierid": "Vodafone",
+      "enabled": true
+    },
+    {
+      "moname": "Belgium",
+      "mccid": "206",
+      "mncid": "10",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Botswana",
+      "mccid": "652",
+      "mncid": "02",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Burkina Faso",
+      "mccid": "613",
+      "mncid": "02",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Cameroun",
+      "mccid": "624",
+      "mncid": "02",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Caribbean",
+      "mccid": "340",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Central African Republic",
+      "mccid": "623",
+      "mncid": "03",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Conakry Guinea",
+      "mccid": "611",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Cote d'Ivoire",
+      "mccid": "612",
+      "mncid": "03",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Democratic Republic of Congo",
+      "mccid": "630",
+      "mncid": "86",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Democratic Republic of Congo",
+      "mccid": "630",
+      "mncid": "89",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Egypt",
+      "mccid": "602",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "France",
+      "mccid": "208",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Guinea Bissau",
+      "mccid": "632",
+      "mncid": "03",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Jordan",
+      "mccid": "416",
+      "mncid": "77",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "La Reunion",
+      "mccid": "647",
+      "mncid": "00",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Liberia",
+      "mccid": "618",
+      "mncid": "07",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Madagascar",
+      "mccid": "646",
+      "mncid": "02",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Mali",
+      "mccid": "610",
+      "mncid": "02",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Mauritius (Cellplus)",
+      "mccid": "617",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Mayotte",
+      "mccid": "647",
+      "mncid": "00",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Moldova",
+      "mccid": "259",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Morocco",
+      "mccid": "604",
+      "mncid": "00",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Niger",
+      "mccid": "614",
+      "mncid": "04",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Poland",
+      "mccid": "260",
+      "mncid": "03",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Romania",
+      "mccid": "226",
+      "mncid": "10",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Senegal",
+      "mccid": "608",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Sierra Leone",
+      "mccid": "619",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Slovakia",
+      "mccid": "231",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Spain",
+      "mccid": "214",
+      "mncid": "03",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    },
+    {
+      "moname": "Tunisia",
+      "mccid": "605",
+      "mncid": "01",
+      "type": "",
+      "value": "",
+      "carrierid": "Orange",
+      "enabled": true
+    }
+  ]
+}

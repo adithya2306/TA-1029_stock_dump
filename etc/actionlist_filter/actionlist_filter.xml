@@ -1,0 +1,14 @@
+<?xml   version="1.0"   encoding="utf-8"?>
+<actionlist type="white">
+<action name="android.appwidget.action.APPWIDGET_UPDATE"/>
+<action name="android.appwidget.action.APPWIDGET_UPDATE_OPTIONS"/>
+<action name="android.appwidget.action.APPWIDGET_DELETED"/>
+<action name="android.appwidget.action.APPWIDGET_DISABLED"/>
+<action name="android.appwidget.action.APPWIDGET_ENABLED"/>
+<action name="android.appwidget.action.APPWIDGET_RESTORED"/>
+<action name="android.appwidget.action.APPWIDGET_HOST_RESTORED"/>
+<action name="android.appwidget.action.APPWIDGET_PICK"/>
+<action name="android.appwidget.action.KEYGUARD_APPWIDGET_PICK"/>
+<action name="android.appwidget.action.APPWIDGET_BIND"/>
+<action name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+</actionlist>  

@@ -1,0 +1,10 @@
+service cameraserver /system/bin/cameraserver
+    class main
+    user cameraserver
+    group audio camera input drmrpc
+    ioprio rt 4
+    writepid /dev/cpuset/camera-daemon/tasks /dev/stune/top-app/tasks
+
+# SungChuan:20170803 - disable camera server as daemon in AT2
+on property:ro.boot.device=AT2
+   stop cameraserver

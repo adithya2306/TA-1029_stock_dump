@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<LowVoltageManagement_Config>
+  <Project name="D1C"/>
+
+  <Version number="03"/>
+
+  <!-- Mode: (0)Off, (1)On -->
+  <Mode state="1"/>
+
+  <Mitigation_List>
+    <Mitigation level="30" cpu_freq="1500000" cpu_core="8" backlight="0" flashlight="0" otg="0" benchmark_apk="1"/>
+    <Mitigation level="15" cpu_freq="1500000" cpu_core="8" backlight="0" flashlight="1" otg="0" benchmark_apk="1"/>
+    <Mitigation level="6" cpu_freq="1500000" cpu_core="8" backlight="0" flashlight="1" otg="0" benchmark_apk="1"/>
+    <Mitigation level="3" cpu_freq="1500000" cpu_core="8" backlight="0" flashlight="1" otg="0" benchmark_apk="1"/>
+  </Mitigation_List>
+
+  <Benchmark_APK_List>
+    <APK name="com.antutu.ABenchMark"/>
+    <APK name="com.antutu.ABenchMark5"/>
+    <APK name="eu.chainfire.cfbench"/>
+  </Benchmark_APK_List>
+
+</LowVoltageManagement_Config>

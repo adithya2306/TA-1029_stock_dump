@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<alt_config version="2.00" rd_mode="false" platform="QC" configVersion="0001" configNote="20170418">
+
+	<alt_setting enable="true">
+
+		<CPUInfo enable="true">
+			<CPUMaxFreqPath value="/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq" enable="true"/>
+			<CPUMinFreqPath value="/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq" enable="true"/>
+
+			<CPU0ScaleFreqPath value="/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" enable="true"/>
+			<CPU1ScaleFreqPath value="/sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq" enable="true"/>
+			<CPU2ScaleFreqPath value="/sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq" enable="true"/>
+			<CPU3ScaleFreqPath value="/sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq" enable="true"/>
+			
+			<CPUTmpPath value="/sys/class/thermal/thermal_zone7/temp" name="CPU0TMP" base="1" enable="true"/>
+			<CPUTmpPath value="/sys/class/thermal/thermal_zone6/temp" name="CPU3TMP" base="1" enable="true"/>
+			
+			<CPUHotspotPath value="/sys/devices/virtual/thermal/thermal_zone8/temp" name="PMIC8909TMP" base="1000" enable="true"/>
+			<CPUHotspotPath value="/sys/devices/virtual/thermal/thermal_zone0/temp" name="PA0TMP" base="1" enable="true"/>
+			<CPUHotspotPath value="/sys/devices/virtual/thermal/thermal_zone1/temp" name="PA1TMP" base="1" enable="false"/>
+		</CPUInfo>
+
+		<BatteryInfo enable="true">
+			<CurrentPath value="/sys/class/power_supply/battery/current_now" chargingBase="1000"/>
+			<BatteryCapacityPath value="/sys/class/power_supply/battery/capacity" enable="true"/>
+			<BatteryVoltagePath value="/sys/class/power_supply/battery/voltage_now" base="1000" enable="true"/>
+			<BatteryTmpPath value="/sys/class/power_supply/battery/temp" base="10" enable="true"/>
+			<ChargingModePath value="/sys/class/power_supply/battery/charging_enabled" enable="true">
+				<ChargingEnable>1</ChargingEnable>
+				<ChargingDisable>0</ChargingDisable>
+			</ChargingModePath>
+			<CableVoltagePath value="/sys/class/power_supply/usb/voltage_now" base="1000" enable="true"/>
+
+			<BatteryThreshold start="40" end="0" enable="true"/>
+
+			<BatteryAfterTest enable="true">
+				<upperbound>85</upperbound>
+				<lowerbound>80</lowerbound>
+			</BatteryAfterTest>
+
+			<BatteryCapMonitor enable="false" value="5"/>
+		</BatteryInfo>
+
+
+		<EMMCInfo enable="true">
+                        <CidPath>/sys/class/block/mmcblk0/device/cid</CidPath>
+                        <ExtCsdPath>/sys/kernel/debug/mmc0/mmc0:0001/ext_csd</ExtCsdPath>
+                </EMMCInfo>
+
+
+		<ChartlogInterval enable="true">5</ChartlogInterval>
+		<RetestRebootRegion enable="false" maxRetestCnt="1"/>
+		<TpFwPath enable="true" value="/proc/AllHWList/Touch"/>
+
+
+		<CameraFwPath enable="false" value=""/>
+		<NFCFwPath enable="false" value=""/>
+		<FPFwPath enable="false" value="No_path"/>
+
+		<FullPeriodTest enable="true">
+                	<UsbPlugEvent enable="true" allowedValue="10"/>
+                	<RealButtonEvent enable="true" allowedValue="10"/>
+                	<BatteryId enable="true" allowedValue="70000-130000,140000-260000"/>
+                	<MtkFatalDetection enable="false"/>
+                	<BBSReport enable="true"/>
+        	</FullPeriodTest>
+
+		<SaveLog enable="true">
+                        <Path>/data/system/dropbox</Path>
+        	</SaveLog>
+		
+		<SaveAlogWhenFail enable="true">
+			<TestItem>TP,TPSelfTest,CPUMaxFreq, CPUMath, MainCameraVideo,FrontCameraVideo, Wifi,Bluetooth,RFMaxPower,Receiver,Speaker,MainMic,SuspendResume,MainCameraPic,FrontCameraPic</TestItem>		
+		</SaveAlogWhenFail>
+
+		
+		<FTP updateALT="false" updateConfig="false" uploadLog="false">
+			<WiFiConnection ssid="5G" password="5432154321"/>
+			<WiFiConnection ssid="2G" password="5432154321"/>
+			<WiFiConnection ssid="5G-1" password="5432154321"/>
+			<WiFiConnection ssid="2G-1" password="5432154321"/>
+			<WiFiConnection ssid="5G-2" password="5432154321"/>
+			<WiFiConnection ssid="2G-2" password="5432154321"/>
+			<WiFiConnection ssid="5G-3" password="5432154321"/>
+			<WiFiConnection ssid="2G-3" password="5432154321"/>
+        		<WebService url="http://10.250.164.142/fuseservice/services/servicefacade.asmx" stationId="TESTNRUNIN01" lang="zh-tw" site="S004" bu="B007" pid="NOKIA00000005"/>
+        		<ApkFolder>D1C</ApkFolder>
+        		<ConfigFolder>D1C</ConfigFolder>
+		</FTP>
+
+
+</alt_setting>
+
+
+
+	<BatteryCapCondition name="bat_cap_cond" enable="false" priority="2">
+                <Range min="40" max="70"/>
+                <LongestWaitting>300</LongestWaitting>
+        </BatteryCapCondition>
+
+	<loop name="Step1" priority="10" cycle="1">
+
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="disable"/>
+	
+		<TPSelfTest name="tp_selftest" enable="true" priority="2" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+
+		<Vibrator name="interference_test.vibrator" enable="false" priority="3" period="180"/>
+
+
+
+		<CPUMaxFreq name="temperature_test.cpu_max_freq" enable="true" thread="4" priority="5" cycle="1" interval="900"/>
+
+		<Vibrator name="interference_test.vibrator" enable="true" priority="5" period="900"/>
+			
+
+		<CPUQuality name="cpu_selftest" enable="false" priority="6" thread="4" period="1200">
+			<CPUPassLoopCount>60000</CPUPassLoopCount>			
+		</CPUQuality>
+
+		<TPSelfTest name="tp_selftest" enable="true" priority="10" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+
+
+		<loop name="Step1_Sleep_Current_Test" priority="15" cycle="1">
+		
+			<SuspendResume name="sleep_current_test.spspend_resume" enable="true" priority="5" cycle="1" s_interval="300" r_interval="1"/>
+		
+		</loop>
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="19" value="enable"/>
+		<loop name="Charging_Test" priority="20" cycle="1">
+			<Charging name="charging_test_2.charging" enable="true" priority="2" period="300">
+				<ChargingCurrentThreshold>500</ChargingCurrentThreshold>
+			</Charging>
+		</loop>
+
+		
+		<loop name="Init_Test" priority="30" cycle="1">
+			<Reboot name="reboot" enable="true" priority="1" cycle="65" estimatetime="165">
+				<MemoryTest enable="true" rebootReason="memory_test" memoryTestPath="/proc/AllHWList/dramtest_result" value="0"/>
+			</Reboot>
+		</loop>
+
+	</loop>
+
+
+	<loop name="1_Step2" priority="20" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+		<TPSelfTest name="tp_selftest" enable="true" priority="2" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+				
+		<loop name="Interference_Test_2-1" priority="3" cycle="1">
+			
+
+			<BatteryTmpCondition enable="true" name="battery_tmp_cond" priority="1">
+                		<upperbound>50</upperbound>
+                		<LongestWaitting>600</LongestWaitting>
+        		</BatteryTmpCondition>
+
+			<SetChargingMode name="set_charging_mode" enable="true" priority="5" value="disable"/>
+
+			<loop priority="10" cycle="1">		
+					<Speaker name="interference_test.speaker" enable="true" volumeMode="max" priority="2" period="600">
+ 						<Path value=""></Path>
+					</Speaker>
+					<Mic name="mic" enable="true" isMonoMode="false" priority="2" period="600">
+        					<Path value="/sdcard/Music/speaker_rec.amr"/>
+					</Mic>
+				
+					<Delay name="mic delay" enable="true" priority="3" period="10"/>
+
+					<Receiver name="interference_test.receiver" enable="true" priority="4" period="600">
+ 						<Path value=""></Path>
+					</Receiver>					
+					<Mic name="mic" enable="true" isMonoMode="false" priority="4" period="600">
+        					<Path value="/sdcard/Music/receiver_rec.amr"/>
+					</Mic>					
+			</loop>
+			<CPUMath name="interference_test.cpumath" enable="true" priority="10" thread="2" period="1210"/>
+			<Vibrator name="interference_test.vibrator" enable="true" priority="10" period="1210"/>
+			<Wifi name="interference_test.wifi" enable="true" priority="10" period="1210"/>
+			<Bluetooth name="interference_test.bt" enable="true" priority="10" period="1210"/>
+			<RFMaxPower name="interference_test.rfmaxpower" enable="true" priority="10" period="1210">
+				<QXDMWorkAround enable="true"/>
+			</RFMaxPower>
+			<Backlight name="backlight" enable="true" priority="10" period="1210">
+                		<Value>255</Value>
+                		<BacklightPath>/sys/class/leds/lcd-backlight/brightness</BacklightPath>
+        		</Backlight>
+			<ChangeBackground name="change_background_max" enable="false" priority="10" interval="1" period="1210"/>
+			<LCD name="compt_test.lcd" enable="true" priority="10" maxThreshold="1" period="1210"/>				
+
+		</loop>
+
+		<TPSelfTest name="tp_selftest" enable="true" priority="10" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+	
+	</loop>
+
+	<loop name="1_Step3" priority="30" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="2" value="disable"/>
+		
+		<SuspendResume name="sleep_current_test.spspend_resume" enable="true" priority="10" cycle="1" s_interval="300" r_interval="1"/>
+		
+		<loop name="Compt_Test_3-2" priority="20" cycle="1">
+			<Accelerometer name="compt_test.acc" enable="true" priority="10" period="180"/>
+			<CapSensor name="compt_test.cap(proximity)" enable="true" priority="10" period="180"/>
+			<Compass name="compt_test.compass" enable="true" priority="10" period="180"/>
+			<Gyroscope name="compt_test.gyro" enable="true" priority="10" period="180"/>
+			<LightSensor name="compt_test.light" enable="true" priority="10" period="180"/>
+			<LED name="compt_test.led" enable="true" priority="10" period="180"/>
+		</loop>
+	</loop>
+
+
+	<loop name="1_Step4" priority="40" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+		<loop name="Interference_Test_4-1" priority="2" cycle="1">			
+			
+			<Vibrator name="interference_test.vibrator" enable="true" priority="10" period="1200"/>
+			<CPUMath name="interference_test.cpumath" enable="true" priority="10" thread="2" period="1200"/>
+			<Vibrator name="interference_test.vibrator" enable="true" priority="10" period="1200"/>
+			<Wifi name="interference_test.wifi" enable="true" priority="10" period="1200"/>
+			<Bluetooth name="interference_test.bt" enable="true" priority="10" period="1200"/>
+			<Backlight name="backlight" enable="true" priority="10" period="1200">
+           			<Value>255</Value>
+           			<BacklightPath>/sys/class/leds/lcd-backlight/brightness</BacklightPath>
+       			</Backlight>
+			<ChangeBackground name="change_background_max" enable="false" priority="10" interval="1" period="1200"/>
+			<LCD name="compt_test.lcd" enable="true" priority="10" maxThreshold="1" period="1200"/>
+			<RFMaxPower name="interference_test.rfmaxpower" enable="true" priority="10" period="1200">
+				<QXDMWorkAround enable="true"/>
+			</RFMaxPower>
+			<Video name="video" enable="true" volumeMode="max" priority="10" period="1200">
+ 	 			<VideoPath>/system/etc/QtestVideo.mp4</VideoPath>
+			</Video>
+		</loop>
+	
+		
+
+	</loop>
+
+
+
+	<loop name="1_Step5" priority="50" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+		<loop name="Sleep_Current_Test_5-1" priority="10" cycle="1">
+		
+			<SuspendResume name="sleep_current_test.spspend_resume" enable="true" priority="5" cycle="1" s_interval="300" r_interval="1"/>
+		
+		</loop>
+
+		<loop name="Compt_Test_5-2" priority="20" cycle="1">
+			<Accelerometer name="compt_test.acc" enable="true" priority="10" period="180"/>
+			<CapSensor name="compt_test.cap(proximity)" enable="true" priority="10" period="180"/>
+			<Compass name="compt_test.compass" enable="true" priority="10" period="180"/>
+			<Gyroscope name="compt_test.gyro" enable="true" priority="10" period="180"/>
+			<LightSensor name="compt_test.light" enable="true" priority="10" period="180"/>			
+			<LED name="compt_test.led" enable="true" priority="10" period="180"/>
+		</loop>
+
+
+
+	</loop>
+
+
+<loop name="Loop_Step2_5" priority="100" cycle="2">
+	<loop name="2_Step2" priority="220" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+
+		<TPSelfTest name="tp_selftest" enable="true" priority="2" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+				
+		<loop name="2_Interference_Test_2-1" priority="3" cycle="1">
+			
+			<BatteryTmpCondition enable="true" name="battery_tmp_cond" priority="1">
+                		<upperbound>50</upperbound>
+                		<LongestWaitting>600</LongestWaitting>
+        		</BatteryTmpCondition>
+		
+			<SetChargingMode name="set_charging_mode" enable="true" priority="5" value="disable"/>
+
+			<loop priority="10" cycle="1">							
+					<Speaker name="interference_test.speaker" enable="true" volumeMode="max" priority="2" period="600">
+ 						<Path value=""></Path>
+					</Speaker>
+					<Mic name="mic" enable="true" isMonoMode="false" priority="2" period="600">
+        					<Path value="/sdcard/Music/speaker_rec.amr"/>
+					</Mic>
+						
+					<Delay name="mic delay" enable="true" priority="3" period="10"/>
+		
+					<Receiver name="interference_test.receiver" enable="true" priority="4" period="600">
+ 						<Path value=""></Path>
+					</Receiver>					
+					<Mic name="mic" enable="true" isMonoMode="false" priority="4" period="600">
+        					<Path value="/sdcard/Music/receiver_rec.amr"/>
+					</Mic>				
+			</loop>
+			
+			<CPUMath name="interference_test.cpumath" enable="true" priority="10" thread="2" period="1210"/>
+			<Vibrator name="interference_test.vibrator" enable="true" priority="10" period="1210"/>
+			<Wifi name="interference_test.wifi" enable="true" priority="10" period="1210"/>
+			<Bluetooth name="interference_test.bt" enable="true" priority="10" period="1210"/>
+			<RFMaxPower name="interference_test.rfmaxpower" enable="true" priority="10" period="1210">
+				<QXDMWorkAround enable="true"/>
+			</RFMaxPower>
+			<Backlight name="backlight" enable="true" priority="10" period="1210">
+                		<Value>255</Value>
+                		<BacklightPath>/sys/class/leds/lcd-backlight/brightness</BacklightPath>
+        		</Backlight>
+			<ChangeBackground name="change_background_max" enable="false" priority="10" interval="1" period="1210"/>
+			<LCD name="compt_test.lcd" enable="true" priority="10" maxThreshold="1" period="1210"/>
+
+		</loop>
+
+		<TPSelfTest name="tp_selftest" enable="true" priority="10" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+	
+	</loop>
+
+	<loop name="2_Step3" priority="230" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="2" value="disable"/>
+		
+		<SuspendResume name="sleep_current_test.spspend_resume" enable="true" priority="10" cycle="1" s_interval="300" r_interval="1"/>
+		
+		<loop name="2_Compt_Test_3-2" priority="20" cycle="1">
+			<Accelerometer name="compt_test.acc" enable="true" priority="10" period="180"/>
+			<CapSensor name="compt_test.cap(proximity)" enable="true" priority="10" period="180"/>
+			<Compass name="compt_test.compass" enable="true" priority="10" period="180"/>
+			<Gyroscope name="compt_test.gyro" enable="true" priority="10" period="180"/>
+			<LightSensor name="compt_test.light" enable="true" priority="10" period="180"/>
+			<LED name="compt_test.led" enable="true" priority="10" period="180"/>
+		</loop>
+	</loop>
+
+
+	<loop name="2_Step4" priority="240" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+		<loop name="2_Interference_Test_4-1" priority="3" cycle="1">			
+				
+			<Vibrator name="interference_test.vibrator" enable="true" priority="10" period="1200"/>
+			<CPUMath name="interference_test.cpumath" enable="true" priority="10" thread="2" period="1200"/>
+			<Wifi name="interference_test.wifi" enable="true" priority="10" period="1200"/>
+			<Bluetooth name="interference_test.bt" enable="true" priority="10" period="1200"/>
+			<Backlight name="backlight" enable="true" priority="10" period="1200">
+           			<Value>255</Value>
+           			<BacklightPath>/sys/class/leds/lcd-backlight/brightness</BacklightPath>
+       			</Backlight>
+			<ChangeBackground name="change_background_max" enable="false" priority="10" interval="1" period="1200"/>
+			<LCD name="compt_test.lcd" enable="true" priority="10" maxThreshold="1" period="1200"/>
+			<RFMaxPower name="interference_test.rfmaxpower" enable="true" priority="10" period="1200">
+				<QXDMWorkAround enable="true"/>
+			</RFMaxPower>
+			<Video name="video" enable="true" volumeMode="max" priority="10" period="1200">
+ 	 			<VideoPath>/system/etc/QtestVideo.mp4</VideoPath>
+			</Video>
+		</loop>
+
+
+	</loop>
+
+
+	<loop name="2_Step5" priority="250" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+		<loop name="2_Sleep_Current_Test_5-1" priority="10" cycle="1">
+		
+			<SuspendResume name="sleep_current_test.spspend_resume" enable="true" priority="5" cycle="1" s_interval="300" r_interval="1"/>
+		
+		</loop>
+
+		<loop name="2_Compt_Test_5-2" priority="20" cycle="1">
+			<Accelerometer name="compt_test.acc" enable="true" priority="10" period="180"/>
+			<CapSensor name="compt_test.cap(proximity)" enable="true" priority="10" period="180"/>
+			<Compass name="compt_test.compass" enable="true" priority="10" period="180"/>
+			<Gyroscope name="compt_test.gyro" enable="true" priority="10" period="180"/>
+			<LightSensor name="compt_test.light" enable="true" priority="10" period="180"/>
+			<LED name="compt_test.led" enable="true" priority="10" period="180"/>
+		</loop>	
+
+		<loop name="2_Sleep_Current_Test_5-3" priority="40" cycle="1">
+		
+			<SuspendResume name="sleep_current_test.spspend_resume" enable="true" priority="5" cycle="1" s_interval="600" r_interval="1"/>
+		
+		</loop>
+	
+	</loop>
+</loop>
+
+
+	<loop name="5_Step2" priority="520" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+		<TPSelfTest name="tp_selftest" enable="true" priority="2" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+				
+		<loop name="5_Interference_Test_2-1" priority="3" cycle="1">
+									
+			<BatteryTmpCondition enable="true" name="battery_tmp_cond" priority="1">
+                		<upperbound>50</upperbound>
+                		<LongestWaitting>600</LongestWaitting>
+        		</BatteryTmpCondition>
+
+			<SetChargingMode name="set_charging_mode" enable="true" priority="5" value="disable"/>
+
+			<loop priority="10" cycle="1">
+							
+					<Speaker name="interference_test.speaker" enable="true" volumeMode="max" priority="2" period="600">
+ 						<Path value=""></Path>
+					</Speaker>
+					<Mic name="mic" enable="true" isMonoMode="false" priority="2" period="600">
+        					<Path value="/sdcard/Music/speaker_rec.amr"/>
+					</Mic>
+
+					<Delay name="mic delay" enable="true" priority="3" period="10"/>
+
+					<Receiver name="interference_test.receiver" enable="true" priority="4" period="600">
+ 						<Path value=""></Path>
+					</Receiver>					
+					<Mic name="mic" enable="true" isMonoMode="false" priority="4" period="600">
+        					<Path value="/sdcard/Music/receiver_rec.amr"/>
+					</Mic>					
+
+			</loop>
+			<CPUMath name="interference_test.cpumath" enable="true" priority="10" thread="2" period="1210"/>
+			<Vibrator name="interference_test.vibrator" enable="true" priority="10" period="1210"/>
+			<Wifi name="interference_test.wifi" enable="true" priority="10" period="1210"/>
+			<Bluetooth name="interference_test.bt" enable="true" priority="10" period="1210"/>
+			<RFMaxPower name="interference_test.rfmaxpower" enable="true" priority="10" period="1210">
+				<QXDMWorkAround enable="true"/>
+			</RFMaxPower>
+			<Backlight name="backlight" enable="true" priority="10" period="1210">
+				<Value>255</Value>
+				<BacklightPath>/sys/class/leds/lcd-backlight/brightness</BacklightPath>
+        		</Backlight>
+			<ChangeBackground name="change_background_max" enable="false" priority="10" interval="1" period="1210"/>
+			<LCD name="compt_test.lcd" enable="true" priority="10" maxThreshold="1" period="1210"/>
+
+		</loop>
+
+		<TPSelfTest name="tp_selftest" enable="true" priority="10" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+	
+	</loop>
+
+	<loop name="5_Step3" priority="530" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="2" value="disable"/>
+		
+		<SuspendResume name="sleep_current_test.spspend_resume" enable="true" priority="10" cycle="1" s_interval="300" r_interval="1"/>
+		
+		<loop name="5_Compt_Test_3-2" priority="20" cycle="1">
+			<Accelerometer name="compt_test.acc" enable="true" priority="10" period="180"/>
+			<CapSensor name="compt_test.cap(proximity)" enable="true" priority="10" period="180"/>
+			<Compass name="compt_test.compass" enable="true" priority="10" period="180"/>
+			<Gyroscope name="compt_test.gyro" enable="true" priority="10" period="180"/>
+			<LightSensor name="compt_test.light" enable="true" priority="10" period="180"/>
+			<LED name="compt_test.led" enable="true" priority="10" period="180"/>
+		</loop>
+	</loop>
+
+
+	<loop name="5_Step4" priority="540" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+		<loop name="5_Interference_Test_4-1" priority="3" cycle="1">			
+
+				
+			<Vibrator name="interference_test.vibrator" enable="true" priority="10" period="1200"/>
+			<CPUMath name="interference_test.cpumath" enable="true" priority="10" thread="2" period="1200"/>
+			<Wifi name="interference_test.wifi" enable="true" priority="10" period="1200"/>
+			<Bluetooth name="interference_test.bt" enable="true" priority="10" period="1200"/>
+			<Backlight name="backlight" enable="true" priority="10" period="1200">
+				<Value>255</Value>
+				<BacklightPath>/sys/class/leds/lcd-backlight/brightness</BacklightPath>
+        		</Backlight>
+			<ChangeBackground name="change_background_max" enable="false" priority="10" interval="1" period="1200"/>
+			<LCD name="compt_test.lcd" enable="true" priority="10" maxThreshold="1" period="1200"/>
+			<RFMaxPower name="interference_test.rfmaxpower" enable="true" priority="10" period="1200">
+				<QXDMWorkAround enable="true"/>
+			</RFMaxPower>
+			<Video name="video" enable="true" volumeMode="max" priority="10" period="1200">
+ 	 			<VideoPath>/system/etc/QtestVideo.mp4</VideoPath>
+			</Video>
+		
+		</loop>
+	
+
+	</loop>
+
+
+	<loop name="5_Step5" priority="550" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+		<loop name="5_Sleep_Current_Test_5-1" priority="10" cycle="1">
+		
+			<SuspendResume name="sleep_current_test.spspend_resume" enable="true" priority="5" cycle="1" s_interval="300" r_interval="1"/>
+		
+		</loop>
+
+		<loop name="5_Compt_Test_5-2" priority="20" cycle="1">
+			<Accelerometer name="compt_test.acc" enable="true" priority="10" period="180"/>
+			<CapSensor name="compt_test.cap(proximity)" enable="true" priority="10" period="180"/>
+			<Compass name="compt_test.compass" enable="true" priority="10" period="180"/>
+			<Gyroscope name="compt_test.gyro" enable="true" priority="10" period="180"/>
+			<LightSensor name="compt_test.light" enable="true" priority="10" period="180"/>
+			<LED name="compt_test.led" enable="true" priority="10" period="180"/>
+		</loop>
+
+		<loop name="5_Sleep_Current_Test_5-3" priority="40" cycle="1">
+		
+			<SuspendResume name="sleep_current_test.spspend_resume" enable="true" priority="5" cycle="1" s_interval="600" r_interval="1"/>
+		
+		</loop>
+		
+	</loop>
+
+
+		
+	<loop name="Step6" enable="true" priority="960" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="disable"/>
+	
+		<FrontCameraPic name="front_cam_pic" enable="true" priority="10" interval="5" period="300">
+			<PreviewOnly>false</PreviewOnly>
+			<ZoomSwitch>true</ZoomSwitch>
+			<Resolution enable="true" width="640" height="480"/>
+			<PicPath enable="true">/sdcard/Movies/front_cam_pic.jpg</PicPath>
+		</FrontCameraPic>
+		
+		<MainCameraPic name="main_cam_pic" enable="true" priority="15" interval="5" period="300">
+			<FlashOn>false</FlashOn>
+			<PreviewOnly>false</PreviewOnly>
+			<ZoomSwitch>true</ZoomSwitch>
+			<Resolution enable="true" width="1024" height="768"/>
+			<PicPath enable="true">/sdcard/Movies/main_cam_pic.jpg</PicPath>
+		</MainCameraPic>
+		
+		<MainCameraPic name="main_cam_pic_flashOn" enable="true" priority="20" interval="5" period="300">
+				<FlashOn>true</FlashOn>
+				<PreviewOnly>false</PreviewOnly>
+				<ZoomSwitch>true</ZoomSwitch>
+				<Resolution enable="true" width="1024" height="768"/>
+				<PicPath enable="true">/sdcard/Movies/main_cam_flash_pic.jpg</PicPath>
+		</MainCameraPic>
+
+
+		<FrontCameraVideo name="front_cam_video" enable="true" priority="23" period="300">
+		        <Resolution enable="true" width="640" height="480"/>
+  			<RecordPath>/sdcard/Movies/front_cam_rec.mp4</RecordPath>
+ 		</FrontCameraVideo>
+
+
+		<MainCameraVideo name="main_cam_video" enable="true" priority="25" period="300">
+		        <Resolution enable="true" width="640" height="480"/>
+			<RecordPath>/sdcard/Movies/main_cam_video.mp4</RecordPath>
+		</MainCameraVideo>
+
+		<CameraSwitch name="cam_switch" enable="false" priority="30" interval="5" period="300"/>
+
+	</loop>
+
+
+	<loop name="Step7" enable="true" priority="970" cycle="1">
+
+		<SetChargingMode name="set_charging_mode" enable="true" priority="1" value="enable"/>
+
+		<TPSelfTest name="tp_selftest" enable="true" priority="2" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+
+		<EMMC name="emmc" enable="true" priority="7" period="1200"/>
+
+		<TPSelfTest name="tp_selftest" enable="true" priority="10" interval="2" period="2">
+			<TPPathWrite value="/proc/touch" data="1"/>
+			<TPPathRead  value="/proc/touch" data="0"/>
+		</TPSelfTest>
+
+	</loop>
+
+
+</alt_config>

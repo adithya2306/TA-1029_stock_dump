@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Wallpaper>
+    <project name="default">
+        <sku id="default">
+            <item name="ACTION_PARTNER_CUSTOMIZATION">com.evenwell.foxlauncher.action.PARTNER_CUSTOMIZATION</item>
+            <item name="default_property">B</item>
+            <mapping-wallpaper type="propertyWallpaper" value="W">michaelericsson</mapping-wallpaper><!-- Pewter White -->
+            <mapping-wallpaper type="propertyWallpaper" value="B">gettyimages</mapping-wallpaper><!-- Pewter Black -->
+            <mapping-wallpaper type="propertyWallpaper" value="M">gettyimages</mapping-wallpaper><!-- Copper black -->
+        </sku>
+    </project>
+</Wallpaper>

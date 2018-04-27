@@ -1,0 +1,158 @@
+<HWMapTable>
+
+    <HWModel HWID="E1A" SKUID="600ID" SIMSlot="2" PROJECT="E1M">
+        <ro.product.brand>Nokia</ro.product.brand>
+        <ro.product.name>Dynamo_00WW</ro.product.name>
+        <ro.product.device>E1M</ro.product.device>
+        <ro.product.model>Nokia 2</ro.product.model>
+        <ro.product.model.display>TA-1029</ro.product.model.display>
+        <ro.product.manufacturer>HMD Global</ro.product.manufacturer>
+        <ro.product.nickname>Nokia 2</ro.product.nickname>
+        <ro.com.google.clientidbase>android-hmd-rev2</ro.com.google.clientidbase>
+        <ro.com.google.acsa>true</ro.com.google.acsa>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+        <ro.camera.shuttersound.default>1</ro.camera.shuttersound.default>
+        <ro.camera.shuttersound.skuid>600ID</ro.camera.shuttersound.skuid>
+        <ro.build.version.base_os>Nokia/Dynamo_00WW/E1M:7.1.1/NMF26F/00WW_0_55D:user/release-keys</ro.build.version.base_os>
+        <ro.build.sp.num>01</ro.build.sp.num>
+    </HWModel>
+
+    <HWModel HWID="E1A" SKUID="600WW" SIMSlot="2" PROJECT="E1M">
+        <ro.product.brand>Nokia</ro.product.brand>
+        <ro.product.name>Dynamo_00WW</ro.product.name>
+        <ro.product.device>E1M</ro.product.device>
+        <ro.product.model>Nokia 2</ro.product.model>
+        <ro.product.model.display>TA-1029</ro.product.model.display>
+        <ro.product.manufacturer>HMD Global</ro.product.manufacturer>
+        <ro.product.nickname>Nokia 2</ro.product.nickname>
+        <ro.com.google.clientidbase>android-hmd-rev2</ro.com.google.clientidbase>
+        <ro.com.google.acsa>true</ro.com.google.acsa>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+        <ro.build.version.base_os>Nokia/Dynamo_00WW/E1M:7.1.1/NMF26F/00WW_0_55D:user/release-keys</ro.build.version.base_os>
+        <ro.build.sp.num>01</ro.build.sp.num>
+    </HWModel>
+
+    <HWModel HWID="E1A" SKUID="600ID" PROJECT="E1M">
+        <ro.product.brand>Nokia</ro.product.brand>
+        <ro.product.name>Dynamo_00WW</ro.product.name>
+        <ro.product.device>E1M</ro.product.device>
+        <ro.product.model>Nokia 2</ro.product.model>
+        <ro.product.model.display>TA-1007</ro.product.model.display>
+        <ro.product.manufacturer>HMD Global</ro.product.manufacturer>
+        <ro.product.nickname>Nokia 2</ro.product.nickname>
+        <ro.com.google.clientidbase>android-hmd-rev2</ro.com.google.clientidbase>
+        <ro.com.google.acsa>true</ro.com.google.acsa>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+        <ro.camera.shuttersound.default>1</ro.camera.shuttersound.default>
+        <ro.camera.shuttersound.skuid>600ID</ro.camera.shuttersound.skuid>
+        <ro.build.version.base_os>Nokia/Dynamo_00WW/E1M:7.1.1/NMF26F/00WW_0_55D:user/release-keys</ro.build.version.base_os>
+        <ro.build.sp.num>01</ro.build.sp.num>
+    </HWModel>
+
+    <HWModel HWID="E1A" SKUID="600WW" PROJECT="E1M">
+        <ro.product.brand>Nokia</ro.product.brand>
+        <ro.product.name>Dynamo_00WW</ro.product.name>
+        <ro.product.device>E1M</ro.product.device>
+        <ro.product.model>Nokia 2</ro.product.model>
+        <ro.product.model.display>TA-1007</ro.product.model.display>
+        <ro.product.manufacturer>HMD Global</ro.product.manufacturer>
+        <ro.product.nickname>Nokia 2</ro.product.nickname>
+        <ro.com.google.clientidbase>android-hmd-rev2</ro.com.google.clientidbase>
+        <ro.com.google.acsa>true</ro.com.google.acsa>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+        <ro.build.version.base_os>Nokia/Dynamo_00WW/E1M:7.1.1/NMF26F/00WW_0_55D:user/release-keys</ro.build.version.base_os>
+        <ro.build.sp.num>01</ro.build.sp.num>
+    </HWModel>
+
+    <HWModel HWID="E1L" SKUID="600WW" SIMSlot="2" PROJECT="E1M">
+        <ro.product.brand>Nokia</ro.product.brand>
+        <ro.product.name>Dynamo_00WW</ro.product.name>
+        <ro.product.device>E1M</ro.product.device>
+        <ro.product.model>Nokia 2</ro.product.model>
+        <ro.product.model.display>TA-1035</ro.product.model.display>
+        <ro.product.manufacturer>HMD Global</ro.product.manufacturer>
+        <ro.product.nickname>Nokia 2</ro.product.nickname>
+        <ro.com.google.clientidbase>android-hmd-rev2</ro.com.google.clientidbase>
+        <ro.com.google.acsa>true</ro.com.google.acsa>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+        <ro.build.version.base_os>Nokia/Dynamo_00WW/E1M:7.1.1/NMF26F/00WW_0_55D:user/release-keys</ro.build.version.base_os>
+        <ro.build.sp.num>01</ro.build.sp.num>
+    </HWModel>
+
+    <HWModel HWID="E1L" SKUID="600WW" PROJECT="E1M">
+        <ro.product.brand>Nokia</ro.product.brand>
+        <ro.product.name>Dynamo_00WW</ro.product.name>
+        <ro.product.device>E1M</ro.product.device>
+        <ro.product.model>Nokia 2</ro.product.model>
+        <ro.product.model.display>TA-1023</ro.product.model.display>
+        <ro.product.manufacturer>HMD Global</ro.product.manufacturer>
+        <ro.product.nickname>Nokia 2</ro.product.nickname>
+        <ro.com.google.clientidbase>android-hmd-rev2</ro.com.google.clientidbase>
+        <ro.com.google.acsa>true</ro.com.google.acsa>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+        <ro.build.version.base_os>Nokia/Dynamo_00WW/E1M:7.1.1/NMF26F/00WW_0_55D:user/release-keys</ro.build.version.base_os>
+        <ro.build.sp.num>01</ro.build.sp.num>
+    </HWModel>
+
+    <HWModel HWID="E1I" SKUID="600WW" SIMSlot="2" PROJECT="E1M">
+        <ro.product.brand>Nokia</ro.product.brand>
+        <ro.product.name>Dynamo_00WW</ro.product.name>
+        <ro.product.device>E1M</ro.product.device>
+        <ro.product.model>Nokia 2</ro.product.model>
+        <ro.product.model.display>TA-1011</ro.product.model.display>
+        <ro.product.manufacturer>HMD Global</ro.product.manufacturer>
+        <ro.product.nickname>Nokia 2</ro.product.nickname>
+        <ro.com.google.clientidbase>android-hmd-rev2</ro.com.google.clientidbase>
+        <ro.com.google.acsa>true</ro.com.google.acsa>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+        <ro.build.version.base_os>Nokia/Dynamo_00WW/E1M:7.1.1/NMF26F/00WW_0_55D:user/release-keys</ro.build.version.base_os>
+        <ro.build.sp.num>01</ro.build.sp.num>
+    </HWModel>
+
+    <HWModel HWID="E1M">
+        <ro.product.brand>Unknown</ro.product.brand>
+        <ro.product.name>Unknown</ro.product.name>
+        <ro.product.device>Unknown</ro.product.device>
+        <ro.product.model>Unknown</ro.product.model>
+        <ro.opa.eligible_device>true</ro.opa.eligible_device>
+        <ro.product.manufacturer>Unknown</ro.product.manufacturer>
+        <ro.product.nickname>Unknown</ro.product.nickname>
+        <ro.com.google.clientidbase>android-Unknown</ro.com.google.clientidbase>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+    </HWModel>
+
+    <HWModel HWID="FAT">
+        <ro.product.brand>Unknown</ro.product.brand>
+        <ro.product.name>Unknown</ro.product.name>
+        <ro.product.device>Unknown</ro.product.device>
+        <ro.product.model>Unknown</ro.product.model>
+        <ro.opa.eligible_device>true</ro.opa.eligible_device>
+        <ro.product.manufacturer>Unknown</ro.product.manufacturer>
+        <ro.product.nickname>Unknown</ro.product.nickname>
+        <ro.com.google.clientidbase>android-Unknown</ro.com.google.clientidbase>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+    </HWModel>
+
+    <HWModel HWID="FOT">
+        <ro.product.brand>Unknown</ro.product.brand>
+        <ro.product.name>Unknown</ro.product.name>
+        <ro.product.device>Unknown</ro.product.device>
+        <ro.product.model>Unknown</ro.product.model>
+        <ro.opa.eligible_device>true</ro.opa.eligible_device>
+        <ro.product.manufacturer>Unknown</ro.product.manufacturer>
+        <ro.product.nickname>Unknown</ro.product.nickname>
+        <ro.com.google.clientidbase>android-Unknown</ro.com.google.clientidbase>
+        <fw.max_users>1</fw.max_users>
+        <fw.show_multiuserui>false</fw.show_multiuserui>
+    </HWModel>
+
+</HWMapTable>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<HighTemperatureManagement_Config>
+  <Project name="D1C"/>
+
+  <Version number="01"/>
+
+  <!-- Mode: (0)Off, (1)On -->
+  <Mode state="0"/>
+
+  <!-- Sampling rate(ms) -->
+  <Sampling rate="5000"/>
+
+  <All_Temperature_Sensor_List>
+    <Sensor name="tsens_tz_sensor0" weight="1"/>
+    <Sensor name="tsens_tz_sensor1" weight="1"/>
+    <Sensor name="tsens_tz_sensor2" weight="1"/>
+    <Sensor name="tsens_tz_sensor3" weight="1"/>
+    <Sensor name="tsens_tz_sensor4" weight="1"/>
+    <Sensor name="tsens_tz_sensor5" weight="1"/>
+    <Sensor name="tsens_tz_sensor6" weight="1"/>
+    <Sensor name="tsens_tz_sensor7" weight="1"/>
+    <Sensor name="tsens_tz_sensor8" weight="1"/>
+    <Sensor name="tsens_tz_sensor9" weight="1"/>
+    <Sensor name="tsens_tz_sensor10" weight="1"/>
+    <Sensor name="pa_therm0" weight="1"/>
+    <Sensor name="pa_therm1" weight="1"/>
+    <Sensor name="xo_therm" weight="1"/>
+    <Sensor name="xo_therm_buf" weight="1"/>
+    <Sensor name="case_therm" weight="1"/>
+    <Sensor name="pm8937_tz" weight="1"/>
+    <Sensor name="battery" weight="1"/>
+  </All_Temperature_Sensor_List>
+
+  <White_Package_List>
+    <Package name="com.antutu.AsBenchMark"/>
+    <Package name="eu.chainfire.cfbench"/>
+  </White_Package_List>
+
+  <White_BackgroundProcess_List>
+    <Package name="jp.naver.line.android"/>
+    <Package name="com.facebook.katana"/>
+  </White_BackgroundProcess_List>
+
+  <Known_Package_List>
+    <PackageInfo name="com.fihtdc.thermaltest">
+      <Sensor_List>
+        <Sensor name="battery" weight="1"/>
+      </Sensor_List>
+
+      <Mitigation_List>
+        <Mitigation temperature="31" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="578000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="32" cpu_freq="1958400" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="578000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="33" cpu_freq="1728000" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="462400000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="34" cpu_freq="1574400" cpu_core="4" backlight="1" flashlight="1" otg="1" wlan="1" gpu_freq="462400000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="35" cpu_freq="1497600" cpu_core="4" backlight="1" flashlight="1" otg="1" wlan="1" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="36" cpu_freq="1267200" cpu_core="3" backlight="1" flashlight="1" otg="1" wlan="1" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="37" cpu_freq="1190400" cpu_core="2" backlight="1" flashlight="1" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="38" cpu_freq="1036800" cpu_core="1" backlight="1" flashlight="1" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="39" cpu_freq= "960000" cpu_core="1" backlight="1" flashlight="1" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="40" cpu_freq= "883200" cpu_core="1" backlight="1" flashlight="1" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+      </Mitigation_List>
+    </PackageInfo>
+
+    <PackageInfo name="com.facebook.katana">
+      <Sensor_List>
+        <Sensor name="battery" weight="1"/>
+      </Sensor_List>
+
+      <Mitigation_List>
+        <Mitigation temperature="36" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="37" cpu_freq="1728000" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="38" cpu_freq="1574400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="0" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="39" cpu_freq="1574400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="40" cpu_freq="1497600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="41" cpu_freq="1267200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="42" cpu_freq="1190400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="43" cpu_freq="1036800" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="44" cpu_freq= "729600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+        <Mitigation temperature="45" cpu_freq= "300000" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+      </Mitigation_List>
+    </PackageInfo>
+
+    <PackageInfo name="com.google.android.youtube">
+      <Sensor_List>
+        <Sensor name="battery" weight="1"/>
+      </Sensor_List>
+
+      <Mitigation_List>
+        <Mitigation temperature="36" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="37" cpu_freq="1574400" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="38" cpu_freq="1497600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="0" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="39" cpu_freq="1267200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="40" cpu_freq="1190400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="41" cpu_freq= "960000" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="42" cpu_freq= "883200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="43" cpu_freq= "729600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="44" cpu_freq= "422400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+        <Mitigation temperature="45" cpu_freq= "300000" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+      </Mitigation_List>
+    </PackageInfo>
+
+    <PackageInfo name="com.android.chrome">
+      <Sensor_List>
+        <Sensor name="battery" weight="1"/>
+      </Sensor_List>
+
+      <Mitigation_List>
+        <Mitigation temperature="36" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="37" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="38" cpu_freq="1958400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="0" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="39" cpu_freq="1958400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="40" cpu_freq="1728000" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="41" cpu_freq="1574400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="42" cpu_freq="1497600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="43" cpu_freq="1267200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="44" cpu_freq= "883200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+        <Mitigation temperature="45" cpu_freq= "300000" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+      </Mitigation_List>
+    </PackageInfo>
+
+    <PackageInfo name="com.android.browser">
+      <Sensor_List>
+        <Sensor name="battery" weight="1"/>
+      </Sensor_List>
+
+      <Mitigation_List>
+        <Mitigation temperature="36" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="37" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="38" cpu_freq="1958400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="0" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="39" cpu_freq="1958400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="40" cpu_freq="1728000" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="41" cpu_freq="1574400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="42" cpu_freq="1497600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="43" cpu_freq="1267200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="44" cpu_freq= "883200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+        <Mitigation temperature="45" cpu_freq= "300000" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+      </Mitigation_List>
+    </PackageInfo>
+
+    <PackageInfo name="com.fihtdc.camera">
+      <Sensor_List>
+        <Sensor name="battery" weight="1"/>
+      </Sensor_List>
+
+      <Mitigation_List>
+        <Mitigation temperature="36" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="37" cpu_freq="1574400" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="1" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="38" cpu_freq="1497600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="39" cpu_freq="1267200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="40" cpu_freq="1036800" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="41" cpu_freq= "883200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="1" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="42" cpu_freq= "652800" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="1" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="43" cpu_freq= "422400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="1" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="44" cpu_freq= "422400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="2" charging="2" killapp="0" shutdown="0"/>
+        <Mitigation temperature="45" cpu_freq= "300000" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="2" charging="2" killapp="0" shutdown="0"/>
+      </Mitigation_List>
+    </PackageInfo>
+
+    <PackageInfo name="com.igg.android.kingdomscharge">
+      <Sensor_List>
+        <Sensor name="battery" weight="1"/>
+      </Sensor_List>
+
+      <Mitigation_List>
+        <Mitigation temperature="36" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="37" cpu_freq="1728000" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="38" cpu_freq="1574400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="0" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="39" cpu_freq="1497600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="40" cpu_freq="1190400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="41" cpu_freq= "960000" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="1" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="42" cpu_freq= "729600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="200000000" modem="0" camcorder="1" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="43" cpu_freq= "652800" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="1" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="44" cpu_freq= "422400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="2" charging="2" killapp="0" shutdown="0"/>
+        <Mitigation temperature="45" cpu_freq= "422400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="2" charging="2" killapp="0" shutdown="0"/>
+      </Mitigation_List>
+    </PackageInfo>
+
+    <PackageInfo name="com.king.candycrushsaga">
+      <Sensor_List>
+        <Sensor name="battery" weight="1"/>
+      </Sensor_List>
+
+      <Mitigation_List>
+        <Mitigation temperature="36" cpu_freq="2265600" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="37" cpu_freq="1728000" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="1" gpu_freq="389000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="38" cpu_freq="1574400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="39" cpu_freq="1267200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="0" killapp="0" shutdown="0"/>
+        <Mitigation temperature="40" cpu_freq="1036800" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="1" gpu_freq="330000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="41" cpu_freq= "883200" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="42" cpu_freq= "729600" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="43" cpu_freq= "652800" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="1" killapp="0" shutdown="0"/>
+        <Mitigation temperature="44" cpu_freq= "422400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+        <Mitigation temperature="45" cpu_freq= "422400" cpu_core="4" backlight="0" flashlight="0" otg="1" wlan="2" gpu_freq="200000000" modem="0" camcorder="0" charging="2" killapp="0" shutdown="0"/>
+      </Mitigation_List>
+    </PackageInfo>
+
+  </Known_Package_List>
+
+  <Unknown_Package>
+    <Priority cpu="4" backlight="3" otg="1" wlan="2" gpu="1" modem="2" camcorder="1" charging="1"/>
+
+    <Evaluation time="180"/>
+
+    <Package_List>
+      <PackageInfo name="test">
+        <Mitigation temperature="39" cpu_freq="1674000" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="400000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+        <Mitigation temperature="40" cpu_freq="1350000" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="400000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+        <Mitigation temperature="41" cpu_freq="1242000" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="400000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+        <Mitigation temperature="42" cpu_freq="1026000" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="320000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+        <Mitigation temperature="43" cpu_freq= "810000" cpu_core="4" backlight="0" flashlight="0" otg="0" wlan="0" gpu_freq="320000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+        <Mitigation temperature="44" cpu_freq= "702000" cpu_core="4" backlight="0" flashlight="1" otg="1" wlan="0" gpu_freq="320000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+        <Mitigation temperature="45" cpu_freq= "486000" cpu_core="4" backlight="0" flashlight="1" otg="1" wlan="0" gpu_freq="320000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+        <Mitigation temperature="46" cpu_freq= "384000" cpu_core="4" backlight="0" flashlight="1" otg="1" wlan="0" gpu_freq="200000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+        <Mitigation temperature="47" cpu_freq= "384000" cpu_core="4" backlight="0" flashlight="1" otg="1" wlan="0" gpu_freq="200000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+        <Mitigation temperature="48" cpu_freq= "384000" cpu_core="4" backlight="0" flashlight="1" otg="1" wlan="0" gpu_freq="200000000" modem="0" camcorder="0" charging="0" shutdown="0" killapp="0"/>
+      </PackageInfo>
+    </Package_List>
+  </Unknown_Package>
+
+
+</HighTemperatureManagement_Config>

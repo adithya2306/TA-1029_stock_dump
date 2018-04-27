@@ -1,0 +1,4 @@
+service hlcservice /system/bin/healthycareservice
+    class main
+    disabled
+    oneshot

@@ -1,0 +1,8 @@
+##CONFIG_PATH##,##RUNIT_PATH##,##PROJECT##,##HW_ID##,##BAND_INFO##,##HWMODEL##
+/system/etc/tools_config_AT2.xml,*,AT2,*,*,*
+/system/etc/tools_config_E1M.xml,/system/etc/runit_e1m_APAC.xml,E1M,*,G_850_900_1800_1900^W_1_2_5_8^L_1_3_5_7_8_20_28_38_40,*
+/system/etc/tools_config_E1M.xml,/system/etc/runit_e1m_LATAM.xml,E1M,*,G_850_900_1800_1900^W_1_2_4_5_8^L_2_3_4_7_12_17_28_38,*
+/system/etc/tools_config_E1M.xml,/system/etc/runit_new_latam.xml,E1M,*,G_850_900_1800_1900^W_1_2_4_5_8^L_2_3_4_5_7_12_17_28_38,*
+/system/etc/tools_config_E1M.xml,/system/etc/runit_e1m_INDIA.xml,E1M,*,G_900_1800^W_1_8^L_1_3_5_20_40_41,*
+/system/etc/tools_config_FAO.xml,/system/etc/runit_FAO.xml,FAO,*,*
+
